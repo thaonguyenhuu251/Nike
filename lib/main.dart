@@ -9,11 +9,13 @@ import 'package:nike/home_page.dart';
 import 'package:nike/profile_page.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
-
+import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform
+  );
   await FirebaseNotificationPush().initNotifications();
   runApp(const MyApp());
 }
