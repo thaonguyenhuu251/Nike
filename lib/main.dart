@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nike/home_page.dart';
+import 'package:nike/profile_page.dart';
 import 'package:simple_shadow/simple_shadow.dart';
+import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -62,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const HomePage(),
     const Page2(),
     const Page3(),
-    const Page4(),
+    const ProfilePage(),
   ];
 
   void _incrementCounter() {
@@ -97,6 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    FlutterStatusbarcolor.setStatusBarColor(const Color(0xffF7F7F9));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Color(0xffF7F7F9)
+    ));
+
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
@@ -166,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 28,
                     fit: BoxFit.cover,
                     colorFilter: pageIndex == 1
-                        ? ColorFilter.mode(Color(0xff0D6EFD), BlendMode.overlay)
+                        ? ColorFilter.mode(Color(0xff0D6EFD), BlendMode.srcIn)
                         : ColorFilter.mode(Colors.black, BlendMode.srcIn),
                   )),
               Container(
@@ -206,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 28,
                     fit: BoxFit.cover,
                     colorFilter: pageIndex == 2
-                        ? ColorFilter.mode(Color(0xff0D6EFD), BlendMode.overlay)
+                        ? ColorFilter.mode(Color(0xff0D6EFD), BlendMode.srcIn)
                         : ColorFilter.mode(Colors.black, BlendMode.srcIn),
                   )),
               IconButton(
@@ -223,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 28,
                     fit: BoxFit.cover,
                     colorFilter: pageIndex == 3
-                        ? ColorFilter.mode(Color(0xff0D6EFD), BlendMode.overlay)
+                        ? ColorFilter.mode(Color(0xff0D6EFD), BlendMode.srcIn)
                         : ColorFilter.mode(Colors.black, BlendMode.srcIn),
                   )),
             ],
@@ -265,27 +273,6 @@ class Page3 extends StatelessWidget {
       child: Center(
         child: Text(
           "Page Number 3",
-          style: TextStyle(
-            color: Colors.green[900],
-            fontSize: 45,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Page4 extends StatelessWidget {
-  const Page4({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xffF7F7F9),
-      child: Center(
-        child: Text(
-          "Page Number 4",
           style: TextStyle(
             color: Colors.green[900],
             fontSize: 45,
