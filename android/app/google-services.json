@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "423905578853",
+    "project_id": "nike-fbbd4",
+    "storage_bucket": "nike-fbbd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423905578853:android:553ee38c39b2743dbf1b8c",
+        "android_client_info": {
+          "package_name": "com.htnguyen.nike.nike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423905578853-qmj2a127vl50kapf7ialdgg40omgpgtt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi2KGuuMvGGNxd3kX5Ankae7x9GO9yEbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423905578853-qmj2a127vl50kapf7ialdgg40omgpgtt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

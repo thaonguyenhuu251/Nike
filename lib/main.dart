@@ -1,12 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nike/api/firebase_notification_push.dart';
 import 'package:nike/home_page.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Firebase.initializeApp();
+  await FirebaseNotificationPush().initNotifications();
   runApp(const MyApp());
 }
 
