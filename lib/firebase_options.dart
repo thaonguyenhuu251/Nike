@@ -16,11 +16,22 @@ import 'package:flutter/foundation.dart'
 /// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
+    if (kIsWeb) {
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
+    }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
         return ios;
+      case TargetPlatform.macOS:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -39,11 +50,10 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBi2KGuuMvGGNxd3kX5Ankae7x9GO9yEbA"',
-    appId: '1:423905578853:android:553ee38c39b2743dbf1b8c"',
+    apiKey: 'AIzaSyBi2KGuuMvGGNxd3kX5Ankae7x9GO9yEbA',
+    appId: '1:423905578853:android:553ee38c39b2743dbf1b8c',
     messagingSenderId: '423905578853',
     projectId: 'nike-fbbd4',
-    databaseURL: 'https://nike-fbbd4-default-rtdb.firebaseio.com',
     storageBucket: 'nike-fbbd4.appspot.com',
   );
 
@@ -52,10 +62,8 @@ class DefaultFirebaseOptions {
     appId: '1:423905578853:ios:c270e01ee3d9420ebf1b8c',
     messagingSenderId: '423905578853',
     projectId: 'nike-fbbd4',
-    databaseURL: 'https://nike-fbbd4-default-rtdb.firebaseio.com',
     storageBucket: 'nike-fbbd4.appspot.com',
     iosClientId: '423905578853-ig00joadalpuogp9174cvd8bqbku4ibu.apps.googleusercontent.com',
     iosBundleId: 'com.htnguyen.nike.nike',
   );
-
 }

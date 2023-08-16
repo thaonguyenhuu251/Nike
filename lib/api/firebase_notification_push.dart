@@ -15,8 +15,8 @@ class FirebaseNotificationPush {
   );
 
   void handleMessage(RemoteMessage? remoteMessage) {
-    if (remoteMessage ==  null) return;
-    /*navigatorKey.currentState?.pushNamed(
+    /*if (remoteMessage ==  null) return;
+    navigatorKey.currentState?.pushNamed(
         MessageScreen.route,
         arguments: remoteMessage
     );*/
