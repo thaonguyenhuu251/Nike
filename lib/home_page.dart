@@ -58,9 +58,9 @@ class TopBar extends StatelessWidget {
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/images/ic_hamburger.svg',
-              alignment: Alignment.center,
-              width: 24,
-              height: 24,
+              alignment: Alignment.bottomLeft,
+              width: 16,
+              height: 16,
               fit: BoxFit.cover,
             )),
         Row(
